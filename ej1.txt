@@ -1,0 +1,33 @@
+1. Qué es HTML, cuando fue creado, cuáles fueron las distintas versiones y cuál es la última?
+HTML (HyperText Markup Language) es el lenguaje estándar para crear y estructurar páginas web. Define la estructura de los contenidos mediante "etiquetas".
+Fue creado por Tim Berners-Lee en 1991, como parte del nacimiento de la World Wide Web.
+
+Evolución de versiones:
+HTML 1.0, 1991, Muy básico, solo para textos e hipervínculos
+HTML 2.0, 1995, Estándar oficial inicial, añadió formularios y listas
+HTML 3.2, 1997, Soporte para scripts, applets y estilos
+HTML 4.01, 1999, Separación de contenido y presentación, introducción de DTD
+XHTML 1.0, 2000, HTML escrito como XML, más estricto
+HTML5, 2014 (estable), Nuevos elementos semánticos, multimedia, APIs
+
+Última versión estable:
+HTML5, con actualizaciones continuas bajo el nombre HTML Living Standard, mantenido por WHATWG.
+
+2. ¿Cuáles son los principios básicos que el W3C recomienda seguir para la creación de documentos
+con HTML?
+El W3C (World Wide Web Consortium) sugiere seguir estos principios al crear documentos HTML:
+- Validez: Usar una sintaxis válida conforme al estándar.
+- Accesibilidad: Hacer el contenido accesible a personas con discapacidades (uso correcto de etiquetas, como alt en imágenes).
+- Semántica: Usar etiquetas que reflejen correctamente el significado del contenido (por ejemplo, usar <header>, <nav>, <article> en lugar de <div> genéricamente).
+- Separación de contenido y presentación: Utilizar HTML para la estructura y CSS para el diseño visual.
+- Compatibilidad: Garantizar que el documento funcione en diferentes navegadores y dispositivos.
+
+3. En las Especificaciones de HTML, ¿cuándo un elemento o atributo se considera desaprobado? ¿y
+obsoleto?
+En las especificaciones de HTML, un elemento o atributo se considera desaprobado (deprecated) cuando aún está disponible y funcional, pero su uso ya no se recomienda, ya que puede ser eliminado en futuras versiones del lenguaje. Estos elementos suelen mantenerse por compatibilidad con versiones anteriores, pero se alienta a los desarrolladores a adoptar alternativas más modernas y semánticas. Por otro lado, un elemento o atributo se considera obsoleto (obsolete) cuando ya no forma parte del estándar actual y los navegadores pueden dejar de soportarlo en cualquier momento. Su uso puede generar errores o comportamientos inesperados. Mientras que lo desaprobado aún es tolerado pero desaconsejado, lo obsoleto está directamente fuera del estándar y debe evitarse por completo.
+
+4. Qué es el DTD y cuáles son los posibles DTDs contemplados en la especificación de HTML 4.01?
+El DTD (Document Type Definition) es una declaración que define la estructura y las reglas sintácticas que debe seguir un documento HTML. Especifica qué elementos y atributos son válidos y cómo deben organizarse. En la especificación de HTML 4.01, se contemplan tres tipos de DTD: el Strict DTD, que no permite el uso de elementos ni atributos de presentación ni aquellos considerados obsoletos, fomentando una estructura limpia y semántica del contenido; el Transitional DTD, que sí permite el uso de elementos de presentación como <font> o <center>, siendo útil en procesos de migración desde versiones antiguas de HTML; y el Frameset DTD, utilizado específicamente cuando se emplean marcos (<frameset>) en lugar de un <body>, una práctica hoy en día en desuso. La elección del DTD determina cómo los navegadores interpretan el documento.
+
+5. Qué son los metadatos y cómo se especifican en HTML?
+Los metadatos son datos que describen otros datos y, en HTML, se utilizan para proporcionar información sobre el documento web, como el autor, la codificación de caracteres, la descripción, las palabras clave o las instrucciones para el navegador. Estos datos no se muestran visualmente al usuario, pero son fundamentales para el correcto funcionamiento e interpretación de la página, especialmente por parte de los navegadores, motores de búsqueda y redes sociales. En HTML, los metadatos se especifican dentro de la sección <head> del documento, utilizando etiquetas como <meta>. Por ejemplo, <meta charset="UTF-8"> define la codificación de caracteres, mientras que otras etiquetas como <meta name="description" content="Descripción del sitio"> o <meta name="author" content="Nombre del autor"> brindan información contextual útil para buscadores y herramientas de indexación.

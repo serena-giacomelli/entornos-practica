@@ -1,0 +1,841 @@
+<!-- Ej 3 a-->
+<!-- 1. Enlace simple a Google -->
+<a href="http://www.google.com.ar">Click aquí para ir a Google</a>
+<!-- Muestra un enlace que lleva a Google en la misma pestaña. -->
+
+<!-- 2. Enlace a Google en nueva pestaña -->
+<a href="http://www.google.com.ar" target="_blank">Click aquí para ir a Google</a>
+<!-- Igual que el anterior, pero abre Google en una nueva pestaña o ventana. -->
+
+<!-- 3. Enlace con atributos adicionales -->
+<a href="http://www.google.com.ar" type="text/html" hreflang="es" charset="utf-8" rel="help"></a>
+<!-- Este enlace no tiene texto visible, así que no se muestra nada en la página.
+    Los atributos extra (type, hreflang, charset, rel) son informativos para navegadores y motores de búsqueda. -->
+
+<!-- 4. Enlace con href="#" -->
+<a href="#">Click aquí para ir a Google</a>
+<!-- Muestra un enlace, pero al hacer clic no lleva a ninguna parte (solo recarga la página). -->
+
+<!-- 5. Enlace interno relativo a un ancla -->
+<a href="#arriba">Click aquí para volver arriba</a>
+<!-- Enlace que lleva a la posición del elemento con id="arriba" en la misma página. -->
+
+<!-- 6. Ancla de destino -->
+<a name="arriba" id="arriba"></a>
+<!-- Marca el destino para el enlace anterior. No se muestra nada visualmente. -->
+
+<!-- Ej 3 b -->
+
+<!-- 7. Imagen e enlace separados -->
+<p><img src="im1.jpg" alt="imagen1" /><a href="http://www.google.com.ar">Click aquí</a></p>
+<!-- VISUALIZACIÓN: Se muestra la imagen seguida del enlace de texto.
+     FUNCIONAMIENTO: Son elementos independientes - la imagen NO es clickeable, solo el texto "Click aquí" es un enlace.
+     ESTRUCTURA: Imagen + Enlace de texto (elementos hermanos dentro del párrafo) -->
+
+<!-- 8. Imagen como enlace + texto separado -->
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" /></a> Click aquí</p>
+<!-- VISUALIZACIÓN: Se muestra la imagen clickeable seguida del texto "Click aquí" (que NO es enlace).
+     FUNCIONAMIENTO: Solo la imagen es clickeable y lleva a Google. El texto "Click aquí" es solo texto plano.
+     ESTRUCTURA: Enlace que contiene imagen + Texto plano separado -->
+
+<!-- 9. Imagen y texto dentro del mismo enlace -->
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" />Click aquí</a></p>
+<!-- VISUALIZACIÓN: Se muestra la imagen seguida del texto "Click aquí", ambos como un solo elemento clickeable.
+     FUNCIONAMIENTO: Tanto la imagen como el texto son clickeables y llevan a Google (un solo enlace).
+     ESTRUCTURA: Un solo enlace que contiene imagen + texto -->
+
+<!-- 10. Imagen enlazada + texto enlazado por separado -->
+<p><a href="http://www.google.com.ar"><img src="im1.jpg" alt="imagen1" /></a> <a href="http://www.google.com.ar">Click aquí</a></p>
+<!-- VISUALIZACIÓN: Se muestra la imagen clickeable, un espacio, y luego el texto "Click aquí" también clickeable.
+     FUNCIONAMIENTO: Dos enlaces separados que van al mismo destino - puedes hacer clic en la imagen O en el texto.
+     ESTRUCTURA: Dos enlaces independientes (imagen + texto) que van al mismo lugar -->
+
+<!--Ej 3 c -->
+
+<!-- COLUMNA 1: Lista No Ordenada Simple (ul) -->
+<ul>
+    <li>xxx</li>
+    <li>yyy</li>
+    <li>zzz</li>
+</ul>
+<!-- VISUALIZACIÓN: 
+     • xxx
+     • yyy  
+     • zzz
+     CARACTERÍSTICAS: Viñetas circulares, sin numeración específica.
+     USO: Para elementos donde el orden no importa -->
+
+<!-- COLUMNA 2: Lista Ordenada Simple (ol) -->
+<ol>
+    <li>xxx</li>
+    <li>yyy</li>
+    <li>zzz</li>
+</ol>
+<!-- VISUALIZACIÓN:
+     1. xxx
+     2. yyy
+     3. zzz
+     CARACTERÍSTICAS: Numeración automática secuencial.
+     USO: Para pasos, instrucciones, rankings donde el orden importa. -->
+
+<!-- COLUMNA 3: Lista Ordenada con Atributos Personalizados -->
+<ol>
+    <li>xxx</li>
+    <li>yyy</li>
+    <li value="2">yyy</li>
+</ol>
+<ol>
+    <li value="3">zzz</li>
+</ol>
+<!-- VISUALIZACIÓN:
+     1. xxx
+     2. yyy
+     2. yyy  ← Forzado a mostrar "2" por value="2"
+     
+     3. zzz  ← Nueva lista que inicia en "3" por value="3"
+     
+     - value="2": Fuerza que ese elemento específico tenga el número 2
+     - Los elementos siguientes continúan desde ese número
+     - Si creas una nueva <ol>, puedes usar value en el primer <li> para definir el inicio
+     - Es útil para continuar numeración después de contenido intermedio -->
+
+<!-- COLUMNA 4: Cita en Bloque (blockquote) -->
+<blockquote>
+    <p>1. xxx<br />
+    2. yyy<br />
+    3. zzz</p>
+</blockquote>
+<!-- VISUALIZACIÓN: 
+     Texto que se ve como:
+         1. xxx
+         2. yyy
+         3. zzz
+     
+    - NO es una lista real, es una cita
+    - Indentación visual automática
+    - Los números son texto manual, no automáticos
+    - Se usa para citar contenido de otras fuentes
+    - Semánticamente diferente a las listas reales -->
+
+<!-- DIFERENCIAS:
+
+1. SEMÁNTICA:
+   - <ul>/<ol>: Elementos de lista real con significado estructural
+   - <blockquote>: Cita textual, no una lista
+
+2. NUMERACIÓN:
+   - <ul>: Viñetas (•, ○, ■) - sin orden
+   - <ol>: Numeración automática (1,2,3... a,b,c... i,ii,iii...)
+   - <blockquote>: Numeración manual como texto
+
+3. ACCESIBILIDAD:
+   - Las listas reales son interpretadas por lectores de pantalla
+   - blockquote se anuncia como "cita"
+
+4. CSS Y PERSONALIZACIÓN:
+   - <ul>: list-style-type (disc, circle, square, none)
+   - <ol>: list-style-type (decimal, lower-alpha, upper-roman, etc.)
+   - value="X": Controla numeración específica
+   - start="X": Define número inicial de toda la lista
+-->
+
+<!-- Ej 3 d -->
+
+<!-- Tabla Simple con TH -->
+<table border="1" width="300">
+    <tr>
+        <th>Columna 1</th>
+        <th>Columna 2</th>
+    </tr>
+    <tr>
+        <td>Celda 1</td>
+        <td>Celda 2</td>
+    </tr>
+    <tr>
+        <td>Celda 3</td>
+        <td>Celda 4</td>
+    </tr>
+</table>
+<!-- ELEMENTOS PRINCIPALES:
+     - <table border="1" width="300">: Tabla con borde y ancho fijo
+     - <th>: Celdas de ENCABEZADO (Table Header)
+     - <td>: Celdas de DATOS (Table Data)
+     - Estructura lineal sin agrupación semántica
+     
+     CARACTERÍSTICAS DE <TH>:
+     Texto automáticamente en NEGRITA
+     Texto automáticamente CENTRADO
+     Semánticamente identifica encabezados
+     Lectores de pantalla los anuncian como "encabezado"
+     Mejor SEO y estructura de datos
+     
+     DIFERENCIAS TH vs TD:
+     <th>: Negrita + Centrado + Semántica de encabezado
+     <td>: Normal + Izquierda + Semántica de dato -->
+
+<!-- Tabla con DIV y STRONG Dentro de TD -->
+<table border="1" width="300">
+    <tr>
+        <td><div align="center"><strong>Columna 1</strong></div></td>
+        <td><div align="center"><strong>Columna 2</strong></div></td>
+    </tr>
+    <tr>
+        <td>Celda 1</td>
+        <td>Celda 2</td>
+    </tr>
+    <tr>
+        <td>Celda 3</td>
+        <td>Celda 4</td>
+    </tr>
+</table>
+<!-- ELEMENTOS PRINCIPALES:
+     - <table border="1" width="300">: Misma estructura base
+     - <td>: TODAS las celdas son datos (no hay <th>)
+     - <div align="center">: Contenedor para centrar contenido
+     - <strong>: Elemento para texto en negrita
+     - Formateo VISUAL pero NO semántico
+     
+     PROBLEMAS DE ESTA ESTRUCTURA:
+     No hay diferenciación semántica de encabezados
+     Lectores de pantalla no identifican encabezados
+     Peor SEO - no hay estructura de datos clara
+     Más código HTML para el mismo resultado visual
+     Uso de atributos obsoletos (align="center")
+     Estructura más compleja de mantener
+     
+     RESULTADO VISUAL: Idéntico a la Estructura 1
+     DIFERENCIA: Solo visual, sin semántica correcta -->
+
+<!-- DIFERENCIAS FUNDAMENTALES:
+
+1. SEMÁNTICA HTML:
+   ESTRUCTURA 1: <th> identifica encabezados correctamente
+   ESTRUCTURA 2: Todo son <td>, sin distinción semántica
+
+2. ACCESIBILIDAD:
+   ESTRUCTURA 1: Screen readers anuncian "encabezado columna 1"
+   ESTRUCTURA 2: Screen readers leen todo como datos normales
+
+3. SEO Y ESTRUCTURA:
+   ESTRUCTURA 1: Los buscadores entienden la estructura de datos
+   ESTRUCTURA 2: Los buscadores no pueden identificar encabezados
+
+4. CANTIDAD DE CÓDIGO:
+   ESTRUCTURA 1: <th>Columna 1</th> (simple y directo)
+   ESTRUCTURA 2: <td><div align="center"><strong>Columna 1</strong></div></td> (verbose)
+
+5. MANTENIMIENTO:
+   ESTRUCTURA 1: Fácil de modificar y estilizar
+   ESTRUCTURA 2: Requiere cambiar múltiples elementos
+
+6. ESTÁNDARES MODERNOS:
+   ESTRUCTURA 1: Sigue las mejores prácticas de HTML
+   ESTRUCTURA 2: Usa métodos obsoletos (align="center")
+-->
+
+<!-- Ej 3 e -->
+<table width="200">
+    <caption>Título</caption>
+    <tr>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+    <tr>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+</table>
+<!-- ELEMENTOS:
+     - <table width="200">: Contenedor principal con ancho fijo de 200px
+     - <caption>: Título de la tabla que aparece ARRIBA por defecto
+     - <t>: Filas de la tabla (2 filas)
+     - <td>: Celdas de datos con fondo gris (#dddddd)
+     - &nbsp;: Espacios en blanco no divisibles para contenido vacío
+     
+     CARACTERÍSTICAS:
+     - Tabla simple de 2x3 (2 filas, 3 columnas)
+     - Todas las celdas son <td> (datos)
+     - Color de fondo uniforme
+     - Título descriptivo con <caption> -->
+
+<!-- Tabla con Colspan y Div Anidado -->
+<table width="200">
+    <tr>
+        <td colspan="3">
+            <div align="center">Título</div>
+        </td>
+    </tr>
+    <tr>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+    <tr>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+</table>
+<!-- ANÁLISIS ESTRUCTURA 2:
+     ELEMENTOS:
+     - <table width="200">: Contenedor principal con ancho fijo
+     - <td colspan="3">: Celda que abarca 3 columnas (fusión horizontal)
+     - <div align="center">: Contenedor con alineación centrada DENTRO de la celda
+     - Filas 2 y 3: Celdas normales con fondo gris
+     
+     CARACTERÍSTICAS:
+     - Tabla de 3x3 pero primera fila fusionada
+     - Usa colspan para crear encabezado ancho
+     - Div interno para centrar contenido
+     - Método alternativo para título de tabla -->
+
+<!-- DIFERENCIAS ENTRE AMBAS :
+
+1. MÉTODO DE TÍTULO:
+   ESTRUCTURA 1: <caption> - Semánticamente correcto
+   ESTRUCTURA 2: <td colspan> + <div> - Método visual
+
+2. SEMÁNTICA HTML:
+   ESTRUCTURA 1: Más semántica y accesible
+   ESTRUCTURA 2: Menos semántica (título como celda)
+
+3. ESTRUCTURA DE FILAS:
+   ESTRUCTURA 1: 2 filas de contenido + caption separado
+   ESTRUCTURA 2: 3 filas donde la primera es el "título"
+
+4. ACCESIBILIDAD:
+   ESTRUCTURA 1: Lectores de pantalla entienden <caption> como título
+   ESTRUCTURA 2: Lectores de pantalla ven el título como celda normal
+
+5. FLEXIBILIDAD CSS:
+   ESTRUCTURA 1: <caption> se puede posicionar con caption-side
+   ESTRUCTURA 2: Título está fijo en primera fila
+
+6. MANTENIMIENTO:
+   ESTRUCTURA 1: Más fácil de mantener y modificar
+   ESTRUCTURA 2: Más compleja (div anidado + colspan)
+ -->
+
+<!-- Ej 3 f -->
+
+<!-- Tabla con ROWSPAN (Fusión Vertical) -->
+<table width="200">
+    <tr>
+        <td colspan="3">
+            <div align="center">Título</div>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="2" bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+    <tr>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+    <tr>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+</table>
+<!-- ELEMENTOS CLAVE:
+     - <td colspan="3">: Primera fila - título que abarca 3 columnas
+     - <td rowspan="2">: Celda que abarca 2 FILAS verticalmente
+     - 4 filas totales con estructura compleja
+     
+     FUNCIONAMIENTO ROWSPAN:
+     - rowspan="2": La celda se extiende 2 filas hacia ABAJO
+     - En la fila 3 solo hay 2 <td> porque la primera está ocupada
+     - La celda "vertical" abarca desde fila 2 hasta fila 3 -->
+
+<!-- Tabla con COLSPAN (Fusión Horizontal) -->
+<table width="200">
+    <tr>
+        <td colspan="3">
+            <div align="center">Título</div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+    <tr>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+        <td bgcolor="#dddddd">&nbsp;</td>
+    </tr>
+</table>
+<!-- ANÁLISIS ESTRUCTURA 2 (COLSPAN):
+     ELEMENTOS CLAVE:
+     - <td colspan="3">: Primera fila - título que abarca 3 columnas
+     - <td colspan="2">: Celda que abarca 2 COLUMNAS horizontalmente
+     - 3 filas totales con estructura más simple
+     
+     FUNCIONAMIENTO COLSPAN:
+     - colspan="2": La celda se extiende 2 columnas hacia la DERECHA
+     - En la fila 2 solo hay 2 <td> (una con colspan="2" + una normal)
+     - La celda "horizontal" abarca las primeras 2 columnas -->
+
+<!-- DIFERENCIAS:
+
+1. DIRECCIÓN DE FUSIÓN:
+   ROWSPAN: Fusiona celdas VERTICALMENTE (hacia abajo)
+   COLSPAN: Fusiona celdas HORIZONTALMENTE (hacia la derecha)
+
+2. ESTRUCTURA DEL CÓDIGO:
+   ROWSPAN: Requiere OMITIR <td> en filas posteriores
+   COLSPAN: Requiere OMITIR <td> en la MISMA fila
+
+3. COMPLEJIDAD:
+   ROWSPAN: Más complejo de calcular y mantener
+   COLSPAN: Más simple y directo
+
+4. CASOS DE USO:
+   ROWSPAN: Encabezados de categorías, datos agrupados verticalmente
+   COLSPAN: Títulos, subtítulos, datos agrupados horizontalmente
+-->
+
+<!-- Ej 3 g -->
+
+<!-- Tabla con Border Básico -->
+<table width="200" border="1">
+    <tr>
+        <td colspan="3">
+            <div align="center">Título</div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" rowspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td width="50%">&nbsp;</td>
+    </tr>
+</table>
+<!-- ELEMENTOS CLAVE:
+     - border="1": Borde simple de 1 pixel alrededor de toda la tabla
+     - width="200": Ancho fijo de la tabla
+     - Combinación de colspan="2" y rowspan="2" en la misma celda
+     - width="50%" en una celda específica
+     
+     CARACTERÍSTICAS:
+     - Bordes visibles de 1px
+     - Celdas pegadas entre sí
+     - Sin espaciado interno extra
+     - Estructura compleja con fusión múltiple -->
+
+<!-- Tabla con Cellpadding y Cellspacing -->
+<table width="200" border="1" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="2">
+            <div align="center">Título</div>
+        </td>
+    </tr>
+    <tr>
+        <td rowspan="2">&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td width="50%">&nbsp;</td>
+    </tr>
+</table>
+<!-- ELEMENTOS CLAVE:
+     - border="1": Borde de 1 pixel
+     - cellpadding="0": Sin relleno interno en las celdas
+     - cellspacing="0": Sin espacio entre celdas
+     - Estructura más simple que la anterior
+     
+     CARACTERÍSTICAS:
+     - Bordes pegados (cellspacing="0")
+     - Sin relleno interno (cellpadding="0")
+     - Apariencia más compacta
+     - Control preciso del espaciado -->
+
+<!-- DIFERENCIAS CLAVE EN ATRIBUTOS:
+
+1. CELLPADDING:
+   ESTRUCTURA 1: No especificado (valor por defecto del navegador)
+   ESTRUCTURA 2: cellpadding="0" (sin relleno interno)
+
+2. CELLSPACING:
+   ESTRUCTURA 1: No especificado (valor por defecto del navegador)
+   ESTRUCTURA 2: cellspacing="0" (sin espacio entre celdas)
+
+3. ESTRUCTURA DE FUSIÓN:
+   ESTRUCTURA 1: colspan="2" + rowspan="2" en la MISMA celda
+   ESTRUCTURA 2: colspan="2" y rowspan="2" en celdas DIFERENTES
+
+4. COMPLEJIDAD:
+   ESTRUCTURA 1: Más compleja (doble fusión)
+   ESTRUCTURA 2: Más simple y clara -->
+
+
+<!-- Ej 3 h -->
+
+<!-- Formulario con Fieldset y Legend -->
+<form id="form1" name="form1" action="procesar.php" method="post" target="_blank">
+    <fieldset>
+        <legend>LOGIN</legend>
+        Usuario: <input type="text" id="usu1" name="usu1" value="xxx" /><br />
+        Clave: <input type="password" id="clave1" name="clave1" value="xxx" />
+    </fieldset>
+    <input type="submit" id="boton1" name="boton1" value="Enviar" />
+</form>
+<!-- ELEMENTOS PRINCIPALES:
+     - <form>: Contenedor principal del formulario
+     - <fieldset>: Agrupa campos relacionados visualmente
+     - <legend>: Título del grupo de campos
+     - <input type="text">: Campo de texto para usuario
+     - <input type="password">: Campo de contraseña (texto oculto)
+     - <input type="submit">: Botón de envío
+     
+     ATRIBUTOS DEL FORM:
+     - id="form1": Identificador único del formulario
+     - name="form1": Nombre del formulario (para JavaScript)
+     - action="procesar.php": Archivo que procesará los datos
+     - method="post": Método HTTP (POST - datos no visibles en URL)
+     - target="_blank": Abre resultado en nueva ventana/pestaña
+     
+     CARACTERÍSTICAS:
+     Estructura correcta con fieldset/legend
+     Campos tienen id y name únicos
+     Valores por defecto ("xxx") en los campos
+     Formulario se envía a archivo PHP específico
+      -->
+
+<!-- Formulario con Labels -->
+<form id="form2" name="form2" action="" method="get" target="_blank">
+    LOGIN<br />
+    <label>Usuario: <input type="text" id="usu2" name="usu2" /></label><br />
+    <label>Clave: <input type="text" id="clave2" name="clave2" /></label><br />
+    <input type="submit" id="boton2" name="boton2" value="Enviar" />
+</form>
+<!-- ANÁLISIS FORMULARIO 2:
+     ELEMENTOS PRINCIPALES:
+     - <form>: Contenedor del formulario
+     - <label>: Etiquetas que asocian texto con campos
+     - <input type="text">: Dos campos de texto (¡NOTA: clave también es text!)
+     - <input type="submit">: Botón de envío
+     
+     ATRIBUTOS DEL FORM:
+     - id="form2": Identificador único
+     - name="form2": Nombre del formulario
+     - action="": VACÍO - se envía a la misma página
+     - method="get": Método HTTP GET (datos visibles en URL)
+     - target="_blank": Nueva ventana para resultado
+     
+     DIFERENCIAS CLAVE:
+     action="" - No especifica destino (problemático)
+     method="get" - Datos visibles en URL (inseguro para contraseñas)
+     Campo clave es type="text" en lugar de "password"
+     Usa <label> para mejor accesibilidad
+     Sin fieldset/legend para agrupación
+     -->
+
+<!-- Formulario con Enctype y Reset -->
+<form id="form3" name="form3" action="mailto:xx@xx.com" enctype="text/plain" method="post" target="_blank">
+    <fieldset>
+        <legend>LOGIN</legend>
+        Usuario: <input type="text" id="usu3" name="usu3" /><br />
+        Clave: <input type="password" id="clave3" name="clave3" />
+    </fieldset>
+    <input type="reset" id="boton3" name="boton3" value="Enviar" />
+</form>
+<!-- ANÁLISIS FORMULARIO 3:
+     ELEMENTOS PRINCIPALES:
+     - <form>: Contenedor del formulario
+     - <fieldset> + <legend>: Agrupación semántica como Form1
+     - <input type="text">: Campo de usuario
+     - <input type="password">: Campo de contraseña (correcto)
+     - <input type="reset">: Botón de RESET (no envío)
+     
+     ATRIBUTOS DEL FORM:
+     - id="form3": Identificador único
+     - name="form3": Nombre del formulario
+     - action="mailto:xx@xx.com": Envía por EMAIL (obsoleto)
+     - enctype="text/plain": Codificación de texto plano
+     - method="post": Método POST
+     - target="_blank": Nueva ventana
+     
+     PROBLEMAS CRÍTICOS:
+     action="mailto:" es obsoleto y problemático
+     type="reset" con value="Enviar" es ENGAÑOSO
+     enctype="text/plain" solo para casos específicos
+     No hay botón de submit real
+     
+     FUNCIONAMIENTO:
+     - Al hacer clic en "Enviar" BORRA los campos (reset)
+     - NO envía el formulario a ningún lado
+     - Comportamiento confuso para el usuario -->
+
+<!-- Ej 3 i-->
+
+<!-- Button Element con Imagen -->
+<label>Botón 1</label>
+<button type="button" name="boton1" id="boton1">
+    <img src="logo.jpg" alt="Botón con imagen" width="30" height="20" /><br />
+    <strong>CLICK AQUÍ</strong>
+</button>
+<!-- ELEMENTOS PRINCIPALES:
+     - <label>: Etiqueta descriptiva para el botón
+     - <button type="button">: Elemento botón semántico
+     - <img>: Imagen dentro del botón
+     - <br />: Salto de línea para separar imagen y texto
+     - <strong>: Texto en negrita
+     
+     ATRIBUTOS DEL BUTTON:
+     - type="button": Botón genérico (no envía formularios)
+     - name="boton1": Nombre para identificación en JavaScript
+     - id="boton1": Identificador único para CSS/JavaScript
+     
+     CARACTERÍSTICAS:
+     Elemento semánticamente correcto para botones
+     Puede contener contenido HTML complejo (img + texto)
+     Mejor accesibilidad que input type="button"
+     Fácil de estilizar con CSS
+     Soporte completo para eventos JavaScript
+     Label asociado mejora la accesibilidad
+     
+     VENTAJAS DEL <button>:
+     - Contenido HTML rico (imágenes, iconos, texto formateado)
+     - Mejor semántica que <input type="button">
+     - Más flexible para diseño
+     - Comportamiento de botón nativo del navegador -->
+
+<!-- Input Type Button -->
+<label>Botón 2</label>
+<input type="button" name="boton2" id="boton2" value="CLICK AQUÍ" />
+<!--ELEMENTOS PRINCIPALES:
+     - <label>: Etiqueta descriptiva para el botón
+     - <input type="button">: Input de tipo botón
+     - Solo texto plano en el value
+     
+     ATRIBUTOS DEL INPUT:
+     - type="button": Define que es un botón clickeable
+     - name="boton2": Nombre para identificación
+     - id="boton2": Identificador único
+     - value="CLICK AQUÍ": Texto que se muestra en el botón
+     
+     CARACTERÍSTICAS:
+     Elemento de formulario estándar
+     Sintaxis simple y directa
+     Compatible con todos los navegadores
+     Solo puede mostrar texto plano (no HTML)
+     Menos flexible para diseño complejo
+     No puede contener imágenes o elementos anidados
+     LIMITACIONES DEL <input type="button">:
+     - Solo texto en el value (no HTML)
+     - No puede contener imágenes
+     - Menos flexible para estilos complejos
+     - Más limitado para interacciones avanzadas -->
+
+<!-- DIFERENCIAS FUNDAMENTALES:
+
+1. CONTENIDO:
+   BOTÓN 1 (<button>): Puede contener HTML complejo (img, strong, br, etc.)
+   BOTÓN 2 (<input>): Solo texto plano en el atributo value
+
+2. SEMÁNTICA:
+   BOTÓN 1 (<button>): Elemento específico para botones
+   BOTÓN 2 (<input>): Elemento de formulario genérico
+
+3. FLEXIBILIDAD DE DISEÑO:
+   BOTÓN 1 (<button>): Total libertad de contenido y estilos
+   BOTÓN 2 (<input>): Limitado al texto del value
+
+4. ACCESIBILIDAD:
+   BOTÓN 1 (<button>): Mejor soporte para lectores de pantalla
+   BOTÓN 2 (<input>): Accesibilidad básica
+
+5. JAVASCRIPT:
+   BOTÓN 1 (<button>): Acceso a contenido HTML interno
+   BOTÓN 2 (<input>): Solo acceso al value
+
+6. CSS:
+   BOTÓN 1 (<button>): Estilización de elementos internos
+   BOTÓN 2 (<input>): Solo estilos del elemento completo
+
+ -->
+
+<!-- Ej 3 j -->
+
+<!--Radio Buttons con Name Compartido -->
+<p>
+    <label><input type="radio" name="opcion" id="X" value="X" />X</label><br />
+    <label><input type="radio" name="opcion" id="Y" value="Y" />Y</label>
+</p>
+<!-- ELEMENTOS PRINCIPALES:
+     - <p>: Contenedor para agrupar los radio buttons
+     - <label>: Envuelve cada radio button con su texto
+     - <input type="radio">: Elementos de radio button
+     - name="opcion": MISMO nombre para AMBOS (crucial)
+     - id únicos: "X" e "Y" (diferentes)
+     - value únicos: "X" e "Y" (valores a enviar)
+     
+     CARACTERÍSTICAS CLAVE:
+     name="opcion" COMPARTIDO - forma un grupo mutuamente exclusivo
+     Solo UNO puede estar seleccionado a la vez
+     Labels correctamente asociados (envuelven el input)
+     IDs únicos para cada radio button
+     Values descriptivos para el formulario
+     
+     FUNCIONAMIENTO:
+     - Al seleccionar "X", "Y" se deselecciona automáticamente
+     - Al seleccionar "Y", "X" se deselecciona automáticamente
+     - Solo un valor se envía en el formulario: opcion=X o opcion=Y
+     -->
+
+<!-- Radio Buttons con Names Diferentes -->
+<p>
+    <label><input type="radio" name="opcion1" id="X" value="X" />X</label><br />
+    <label><input type="radio" name="opcion2" id="Y" value="Y" />Y</label>
+</p>
+<!-- ELEMENTOS PRINCIPALES:
+     - <p>: Contenedor para agrupar visualmente
+     - <label>: Envuelve cada radio button
+     - <input type="radio">: Elementos de radio button
+     - name="opcion1" y name="opcion2": NOMBRES DIFERENTES
+     - id duplicados: "X" e "Y" (PROBLEMA)
+     - value únicos: "X" e "Y"
+     
+     PROBLEMAS CRÍTICOS:
+     Names diferentes = NO forman un grupo mutuamente exclusivo
+     AMBOS pueden estar seleccionados simultáneamente
+     IDs duplicados entre estructuras (HTML inválido)
+     No se comportan como radio buttons tradicionales
+     Envía múltiples valores: opcion1=X AND opcion2=Y
+     
+     FUNCIONAMIENTO ERRÓNEO:
+     - "X" e "Y" actúan como checkboxes independientes
+     - Ambos pueden estar marcados al mismo tiempo
+     - No hay exclusividad mutua
+     - Comportamiento confuso para el usuario
+     -->
+
+
+<!-- ========== COMPARACIÓN DETALLADA ========== -->
+
+<!-- DIFERENCIAS FUNDAMENTALES:
+
+1. ATRIBUTO NAME:
+   ESTRUCTURA 1: name="opcion" (COMPARTIDO)
+   ESTRUCTURA 2: name="opcion1", name="opcion2" (DIFERENTES)
+
+2. COMPORTAMIENTO:
+   ESTRUCTURA 1: Mutuamente exclusivo (solo uno seleccionado)
+   ESTRUCTURA 2: Independientes (ambos pueden estar seleccionados)
+
+3. SEMÁNTICA:
+   ESTRUCTURA 1: Radio group correcto
+   ESTRUCTURA 2: Se comporta como checkboxes
+
+4. DATOS ENVIADOS:
+   ESTRUCTURA 1: opcion=X OR opcion=Y (un solo valor)
+   ESTRUCTURA 2: opcion1=X AND opcion2=Y (múltiples valores)
+
+5. VALIDEZ HTML:
+   ESTRUCTURA 1: IDs únicos en su contexto
+   ESTRUCTURA 2: IDs duplicados entre ejemplos
+
+6. EXPERIENCIA DE USUARIO:
+   ESTRUCTURA 1: Comportamiento esperado de radio buttons
+   ESTRUCTURA 2: Comportamiento confuso y no estándar
+     -->
+
+
+<!-- Ej 3 k -->
+
+<!-- Select Simple con Optgroups -->
+<select name="lista">
+    <optgroup label="Caso 1">
+        <option>Mayo</option>
+        <option>Junio</option>
+    </optgroup>
+    <optgroup label="Caso 2">
+        <option>Mayo</option>
+        <option>Junio</option>
+    </optgroup>
+</select>
+<!-- ELEMENTOS PRINCIPALES:
+     - <select name="lista">: Elemento desplegable principal
+     - <optgroup label="Caso 1">: Grupo de opciones con etiqueta
+     - <option>: Opciones individuales dentro de cada grupo
+     - Sin atributos adicionales (comportamiento por defecto)
+     
+     CARACTERÍSTICAS CLAVE:
+     Agrupación visual con optgroup
+     Etiquetas descriptivas para cada grupo
+     Selección única (comportamiento por defecto)
+     Estructura semánticamente organizada
+     Solo UNA opción puede ser seleccionada
+     
+     FUNCIONAMIENTO:
+     - Al hacer clic se despliega una lista
+     - Las opciones están agrupadas visualmente
+     - Solo se puede seleccionar una opción a la vez
+     - Se envía: lista=Mayo (por ejemplo)
+     -->
+     
+<!-- Select Multiple con Optgroups -->
+<select name="lista[]" multiple="multiple">
+    <optgroup label="Caso 1">
+        <option>Mayo</option>
+        <option>Junio</option>
+    </optgroup>
+    <optgroup label="Caso 2">
+        <option>Mayo</option>
+        <option>Junio</option>
+    </optgroup>
+</select>
+<!-- ELEMENTOS PRINCIPALES:
+     - <select name="lista[]" multiple="multiple">: Select con selección múltiple
+     - <optgroup label="Caso 1">: Grupos de opciones
+     - <option>: Opciones individuales
+     - name="lista[]": Array notation para múltiples valores
+     
+     CARACTERÍSTICAS CLAVE:
+     Selección múltiple habilitada
+     Agrupación visual mantenida
+     MÚLTIPLES opciones pueden ser seleccionadas
+     Array notation en name para recibir múltiples valores
+     Interfaz tipo lista visible (no desplegable)
+     
+     FUNCIONAMIENTO:
+     - Se muestra como una lista visible (no desplegable)
+     - Ctrl+click para seleccionar múltiples opciones
+     - Shift+click para selección en rango
+     - Se envían múltiples valores: lista[]=Mayo&lista[]=Junio
+     
+     -->
+
+<!-- DIFERENCIAS FUNDAMENTALES:
+
+1. ATRIBUTO MULTIPLE:
+   ESTRUCTURA 1: Sin multiple (selección única)
+   ESTRUCTURA 2: multiple="multiple" (selección múltiple)
+
+2. COMPORTAMIENTO DE SELECCIÓN
+   ESTRUCTURA 1: Solo UNA opción seleccionab
+   ESTRUCTURA 2: MÚLTIPLES opciones seleccionables
+
+3. INTERFAZ VISUAL:
+   ESTRUCTURA 1: Desplegable (dropdown)
+   ESTRUCTURA 2: Lista visible permanente
+
+4. NAMING CONVENTION:
+   ESTRUCTURA 1: name="lista" (valor único)
+   ESTRUCTURA 2: name="lista[]" (array de valores)
+
+5. DATOS ENVIADOS:
+   ESTRUCTURA 1: lista=Mayo (un solo valor)
+   ESTRUCTURA 2: lista[]=Mayo&lista[]=Junio (múltiples valores)
+
+6. INTERACCIÓN DEL USUARIO:
+   ESTRUCTURA 1: Click simple para seleccionar
+   ESTRUCTURA 2: Ctrl+click, Shift+click para múltiples
+
+     -->

@@ -1,0 +1,143 @@
+Analizar los siguientes segmentos de código indicando en qué sección del documento HTML
+se colocan, cuál es el efecto que producen y señalar cada uno de los elementos, etiquetas, y atributos
+(nombre y valor), aclarando si es obligatorio. 
+
+2.a) <!-- Código controlado el día 12/08/2009 →
+
+UBICACIÓN: Puede ir en cualquier sección del documento HTML (head o body)
+EFECTO: Es un comentario HTML que no se muestra en el navegador
+ANÁLISIS:
+- Elemento: Comentario HTML
+- Sintaxis: <!-- contenido del comentario -->
+- NOTA: Hay un error de sintaxis - debería terminar con --> en lugar de →
+- El comentario es opcional y se usa para documentación del código
+- No afecta la visualización de la página
+
+2.b) <div id="bloque1">Contenido del bloque1</div>
+
+UBICACIÓN: Dentro del <body> del documento HTML
+EFECTO: Crea un contenedor de bloque que agrupa contenido
+ANÁLISIS:
+- Elemento: <div> (división/contenedor)
+- Etiqueta de apertura: <div>
+- Etiqueta de cierre: </div>
+- Atributo: id="bloque1"
+  - Nombre: id
+  - Valor: "bloque1"
+  - Es opcional, pero útil para CSS y JavaScript
+- Contenido: "Contenido del bloque1"
+- El div es un elemento de bloque que ocupa todo el ancho disponible
+
+2.c) <img src="" alt="lugar imagen" id="im1" name="im1" width="32" height="32" longdesc="detalles.htm" />
+
+UBICACIÓN: Dentro del <body> del documento HTML
+EFECTO: Inserta una imagen en la página (aunque src está vacío)
+ANÁLISIS:
+- Elemento: <img> (imagen)
+- Es un elemento vacío (self-closing)
+- Atributos:
+  * src="" - Nombre: src, Valor: vacío - OBLIGATORIO (ruta de la imagen)
+  * alt="lugar imagen" - Nombre: alt, Valor: "lugar imagen" - OBLIGATORIO (texto alternativo)
+  * id="im1" - Nombre: id, Valor: "im1" - Opcional (identificador único)
+  * name="im1" - Nombre: name, Valor: "im1" - Opcional (nombre del elemento)
+  * width="32" - Nombre: width, Valor: "32" - Opcional (ancho en píxeles)
+  * height="32" - Nombre: height, Valor: "32" - Opcional (alto en píxeles)
+  * longdesc="detalles.htm" - Nombre: longdesc, Valor: "detalles.htm" - Opcional (descripción larga)
+
+2.d) <meta name="keywords" lang="es" content="casa, compra, venta, alquiler " />
+     <meta http-equiv="expires" content="16-Sep-2019 7:49 PM" />
+
+UBICACIÓN: Dentro del <head> del documento HTML
+EFECTO: Proporciona metadatos sobre el documento
+ANÁLISIS:
+
+Primera etiqueta meta:
+- Elemento: <meta> (metadatos)
+- Es un elemento vacío
+- Atributos:
+  * name="keywords" - Nombre: name, Valor: "keywords" - Define el tipo de metadato
+  * lang="es" - Nombre: lang, Valor: "es" - Opcional (idioma del contenido)
+  * content="casa, compra, venta, alquiler " - Nombre: content, Valor: lista de palabras clave - OBLIGATORIO cuando se usa name
+
+Segunda etiqueta meta:
+- Elemento: <meta> (metadatos)
+- Atributos:
+  * http-equiv="expires" - Nombre: http-equiv, Valor: "expires" - Define directiva HTTP
+  * content="16-Sep-2019 7:49 PM" - Nombre: content, Valor: fecha de expiración - OBLIGATORIO cuando se usa http-equiv
+
+2.e) <a href="http://www.e-style.com.ar/resumen.html" type="text/html" hreflang="es" charset="utf-8" rel="help">Resumen HTML </a>
+
+UBICACIÓN: Dentro del <body> del documento HTML
+EFECTO: Crea un enlace hipervínculo al texto "Resumen HTML"
+ANÁLISIS:
+- Elemento: <a> (anchor/enlace)
+- Etiqueta de apertura: <a>
+- Etiqueta de cierre: </a>
+- Contenido: "Resumen HTML "
+- Atributos:
+  * href="http://www.e-style.com.ar/resumen.html" - Nombre: href, Valor: URL destino - OBLIGATORIO para enlaces
+  * type="text/html" - Nombre: type, Valor: "text/html" - Opcional (tipo MIME del destino)
+  * hreflang="es" - Nombre: hreflang, Valor: "es" - Opcional (idioma del documento destino)
+  * charset="utf-8" - Nombre: charset, Valor: "utf-8" - Opcional (codificación del destino)
+  * rel="help" - Nombre: rel, Valor: "help" - Opcional (relación con el documento destino)
+
+2.f) <table width="200" summary="Datos correspondientes al ejercicio vencido">
+     <caption align="top"> Título </caption>
+     <tr>
+     <th scope="col">&nbsp;</th>
+     <th scope="col">A</th>
+     <th scope="col">B</th>
+     <th scope="col">C</th>
+     </tr>
+     <tr>
+     <th scope="row">1º</th>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     </tr>
+     <tr>
+     <th scope="row">2º</th>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     <td>&nbsp;</td>
+     </tr>
+     </table>
+
+UBICACIÓN: Dentro del <body> del documento HTML
+EFECTO: Crea una tabla con título, encabezados y datos
+ANÁLISIS:
+
+Elemento <table>:
+- Etiquetas: <table> y </table>
+- Atributos:
+  * width="200" - Nombre: width, Valor: "200" - Opcional (ancho de la tabla)
+  * summary="Datos correspondientes al ejercicio vencido" - Nombre: summary, Valor: descripción - Opcional (resumen para accesibilidad)
+
+Elemento <caption>:
+- Etiquetas: <caption> y </caption>
+- Contenido: " Título "
+- Atributos:
+  * align="top" - Nombre: align, Valor: "top" - Opcional (posición del título)
+
+Elementos <tr> (filas de tabla):
+- Etiquetas: <tr> y </tr>
+- Sin atributos en este caso
+- Contienen celdas de encabezado (<th>) o datos (<td>)
+
+Elementos <th> (celdas de encabezado):
+- Etiquetas: <th> y </th>
+- Atributos:
+  * scope="col" - Nombre: scope, Valor: "col" - Opcional (indica que es encabezado de columna)
+  * scope="row" - Nombre: scope, Valor: "row" - Opcional (indica que es encabezado de fila)
+- Contenido: "&nbsp;" (espacio en blanco), "A", "B", "C", "1º", "2º"
+
+Elementos <td> (celdas de datos):
+- Etiquetas: <td> y </td>
+- Sin atributos en este caso
+- Contenido: "&nbsp;" (espacios en blanco)
+
+ESTRUCTURA DE LA TABLA:
+- 3 filas y 4 columnas
+- Primera fila: encabezados de columna
+- Filas 2 y 3: datos con encabezados de fila en la primera columna
+- &nbsp; representa un espacio en blanco no divisible

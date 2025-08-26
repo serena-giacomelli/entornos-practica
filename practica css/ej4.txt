@@ -1,0 +1,62 @@
+Ejercicio 4
+Dadas las siguientes declaraciones:
+* {color:green; }
+a:link {color:gray }
+a:visited{color:blue }
+a:hover {color:fuchsia }
+a:active {color:red }
+p {font-family: arial,helvetica;font-size: 10px;color:black; }
+.contenido{font-size: 14px;font-weight: bold; }
+Analizar los siguientes códigos y comparar sus efectos. Explicar:
+
+<body>
+<p class="contenido" style="font-weight: normal;">
+Este es un texto ...............</p>
+<table>
+<tr>
+<td>Y esta es una tabla.......</td>
+</tr>
+<tr>
+<td><a href="http://www.google.com.ar">con un
+enlace</a></td>
+</tr>
+</table>
+</body>
+
+<body class="contenido">
+<p> Este es un texto................</p>
+<table>
+<tr>
+<td>Y esta es una tabla.......</td>
+</tr>
+<tr>
+<td><a href="http://www.google.com.ar">con
+un enlace</a></td>
+</tr>
+</table>
+</body>
+
+1. Declaraciones de reglas CSS:
+- * {color:green;}: Todos los elementos tendrán texto verde, salvo que otra regla lo sobrescriba.
+- a:link {color:gray}: Enlaces no visitados serán grises.
+- a:visited {color:blue}: Enlaces visitados serán azules.
+- a:hover {color:fuchsia}: Enlaces al pasar el mouse serán fucsia.
+- a:active {color:red}: Enlaces activos serán rojos.
+- p {font-family: arial,helvetica; font-size: 10px; color:black;}: Todos los <p> tendrán fuente Arial/Helvetica, tamaño 10px y texto negro.
+- .contenido {font-size: 14px; font-weight: bold;}: Elementos con clase "contenido" tendrán texto de 14px y negrita.
+
+2. Primer código:
+- <p class="contenido" style="font-weight: normal;">...: La clase "contenido" le da tamaño 14px y negrita, pero el atributo style="font-weight: normal;" sobrescribe la negrita y lo deja normal. El color del texto será negro por la regla de p, y la fuente Arial/Helvetica, tamaño 14px (por la clase).
+- <table> y <td>: Tendrán texto verde por la regla universal *.
+- <a href=...>: El color del enlace depende de su estado (gris, azul, fucsia o rojo según corresponda).
+
+3. Segundo código:
+- <body class="contenido">...: Todo el contenido dentro del body hereda la clase "contenido", por lo que todos los textos serán de 14px y negrita, salvo que otra regla lo sobrescriba.
+- <p>: Además de la clase, se aplica la regla de p (fuente Arial/Helvetica, color negro), pero el tamaño y negrita lo da la clase.
+- <table> y <td>: Tendrán texto verde por la regla universal *, pero si heredan la clase "contenido" del body, el texto será de 14px y negrita.
+- <a href=...>: Igual que antes, el color depende del estado del enlace.
+
+4. Comparación de efectos:
+- En el primer caso, solo el <p> tiene la clase "contenido" y el estilo en línea anula la negrita. El resto de los elementos no se ven afectados por la clase.
+- En el segundo caso, todos los elementos dentro del body heredan la clase "contenido", por lo que el texto será más grande y en negrita (excepto si alguna regla o estilo en línea lo sobrescribe).
+- Los enlaces se comportan igual en ambos casos, según su estado.

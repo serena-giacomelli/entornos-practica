@@ -1,0 +1,39 @@
+Ejercicio 2
+Analizar el siguiente código señalando declaraciones y aplicaciones de reglas, y su efecto.
+p#normal {
+font-family: arial,helvetica;
+font-size: 11px;
+font-weight: bold;
+}
+*#destacado {
+border-style: solid;
+border-color: blue;
+border-width: 2px;
+}
+#distinto {
+background-color: #9EC7EB;
+color: red;
+}
+<p id="normal">Este es un párrafo</p>
+<p id="destacado">Este es otro párrafo</p>
+<table id="destacado"><tr><td>Esta es una tabla</td></tr></table>
+<p id="distinto">Este es el último párrafo</p>
+
+
+1. Declaraciones de reglas CSS:
+
+- p#normal { ... }: Aplica a los elementos <p> con id="normal". Establece fuente Arial/Helvetica, tamaño 11px y negrita.
+- *#destacado { ... }: Aplica a cualquier elemento con id="destacado". Establece borde sólido azul de 2px.
+- #distinto { ... }: Aplica a cualquier elemento con id="distinto". Establece fondo azul claro y texto rojo.
+
+2. Aplicaciones y efecto:
+
+- <p id="normal">Este es un párrafo</p>: Se aplican las reglas de p#normal. El texto aparece en Arial/Helvetica, 11px, negrita.
+- <p id="destacado">Este es otro párrafo</p>: Se aplica la regla de *#destacado. El párrafo tiene borde azul sólido de 2px.
+- <table id="destacado"><tr><td>Esta es una tabla</td></tr></table>: Se aplica la regla de *#destacado. La tabla tiene borde azul sólido de 2px.
+- <p id="distinto">Este es el último párrafo</p>: Se aplica la regla de #distinto. El fondo es azul claro y el texto rojo.
+
+3. Observaciones:
+
+- La regla *#destacado usa el selector universal *, pero en este caso es equivalente a #destacado porque el id es único.
+- Las reglas se aplican solo a los elementos que coinciden exactamente con el selector.

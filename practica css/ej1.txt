@@ -1,0 +1,60 @@
+Ejercicio 1: Responder
+
+1. ¿ Qué es CSS y para qué se usa?
+CSS es un lenguaje de hojas de estilo que se utiliza para describir la apariencia y el formato de un documento HTML. Permite separar el contenido (HTML) de la presentación (colores, tipografías, tamaños, márgenes, etc.), facilitando el diseño visual de páginas web.
+
+2. CSS utiliza reglas para las declaraciones de estilo, ¿cómo funcionan?
+Una regla CSS está compuesta por:
+Selector: indica a qué elementos de HTML se aplicará el estilo.
+Declaración: entre llaves { } contiene una o más propiedades con sus valores.
+Propiedad: lo que queremos modificar (ej. color, font-size).
+Valor: el resultado asignado a la propiedad.
+
+3. ¿ Cuáles son las tres formas de dar estilo a un documento?
+CSS en línea (inline): usando el atributo style directamente en el elemento HTML.
+<p style="color:red;">Texto en rojo</p>
+
+
+CSS interno (en el mismo archivo HTML): dentro de la etiqueta <style> en el <head>.
+<style>
+  p { color: green; }
+</style>
+
+
+CSS externo (archivo separado .css): vinculando un archivo CSS con <link>.
+<link rel="stylesheet" href="estilos.css">
+
+4. ¿ Cuáles son los distintos tipos de selectores más utilizados?
+Ejemplifique cada uno.
+Selector de etiqueta: aplica a todas las etiquetas específicas.
+p { color: blue; }
+
+Selector de clase: se usa con un punto (.). Aplica a los elementos con esa clase.
+.importante { font-weight: bold; }
+
+Selector de id: se usa con un #. Aplica al elemento con ese id único.
+#titulo { font-size: 24px; }
+
+Selector universal: aplica a todos los elementos.
+* { margin: 0; padding: 0; }
+
+Selector descendente: selecciona elementos dentro de otro.
+div p { color: gray; }
+
+5. ¿ Qué es una pseudo-clase? Cuáles son las más utilizadas aplicadas a vínculos?
+Una pseudo-clase define un estado especial de un elemento que no se puede identificar con atributos normales.
+En los vínculos (<a>), las más comunes son:
+:link → estilo de un enlace no visitado.
+:visited → estilo de un enlace ya visitado.
+:hover → estilo cuando el cursor pasa por encima.
+:active → estilo cuando el enlace está siendo presionado.
+
+6. ¿ Qué es la herencia?
+La herencia en CSS es el mecanismo por el cual ciertos estilos aplicados a un elemento padre se transmiten automáticamente a sus elementos hijos. Por ejemplo, si un <div> tiene color: blue, sus párrafos <p> internos también heredarán ese color, salvo que se sobrescriba.
+
+7. ¿ En qué consiste el proceso denominado cascada?
+La cascada es el proceso que utiliza CSS para determinar qué estilos aplicar cuando existen múltiples reglas que afectan al mismo elemento. La prioridad se establece en este orden:
+Estilos del navegador (por defecto).
+Estilos de usuario (definidos por el visitante en su navegador).
+Estilos del autor (nuestro CSS).
+Entre reglas del autor, se considera la especificidad (id > clase > etiqueta) y el orden en el que aparecen: la última regla escrita prevalece.

@@ -1,0 +1,213 @@
+﻿PRÁCTICA N°4 PHP
+
+
+Parte 1 PHP: variables, tipos, operadores, expresiones, estructuras de control
+
+
+Ejercicio 1:
+Variables y tipos
+* $a: bool (TRUE)
+
+* $b: string ("xyz")
+
+* $c: string ('xyz')
+
+* $d: int (12 inicialmente)
+
+* $f, $g: int (se definen luego)
+
+Funciones y parámetros
+   * doble($i): recibe int|float, retorna el doble.
+
+   * Built-ins: gettype($x), is_int($x), is_string($x).
+
+Operadores (principales)
+      * Aritméticos: *, +=, ++, *= (implícito en $f += 10)
+
+      * Ternario: $a ? ++$d : $d*3
+
+      * Post-incremento: $d++
+
+      * Concatenación en echo por coma (múltiples argumentos)
+Estructuras de control
+         * if (...) { ... } (dos veces)
+
+         * Operador ternario (condicional abreviado)
+Salidas por pantalla
+            1. echo gettype($a): boolean
+
+            2. echo gettype($b): string
+
+            3. echo gettype($c): string
+
+            4. echo gettype($d): integer
+
+            5. if (is_int($d)) $d += 4; → $d pasa de 12 a 16
+
+            6. if (is_string($a)) ... → no imprime ( $a es boolean, no string )
+
+            7. $d = $a ? ++$d : $d*3; → $a es TRUE, así que ++$d primero incrementa a 17 y asigna 17 a $d.
+
+            8. $f = doble($d++); → llama doble(17) → 34; luego $d post-incrementa a 18. Resultado: $f = 34, $d = 18.
+
+            9. $g = $f += 10; → primero $f = $f + 10 → 44, y ese mismo 44 se asigna a $g. Queda $f = 44, $g = 44.
+
+            10. echo $a, $b, $c, $d, $f, $g;
+
+               * $a en echo imprime 1 (TRUE)
+
+               * $b: xyz
+
+               * $c: xyz
+
+               * $d: 18
+
+               * $f: 44
+
+               * $g: 44
+
+
+Salida total 
+booleanstringstringinteger1xyzxyz184444
+Ejercicio 2:
+a) Los tres códigos son equivalentes, imprimen exactamente la misma secuencia 12345678910.
+
+Las diferencias son:
+                  * El 1 y 2 usan while con distinto estilo de sintaxis.
+
+                  * El 3 usa do while
+b) Los cuatro códigos son equivalentes, todos imprimen la misma secuencia 12345678910.
+
+Las diferencias son:
+                     * Código 1 es clásico y más legible.
+
+                     * Código 2 y 3 usan break para cortar.
+
+                     * Código 4 es más "compacto", mete todo en la cláusula del for.
+
+
+c) Los dos códigos son equivalentes en este contexto.
+
+ La diferencia es:
+                        * El primero utiliza los condicionales if/elseif.
+
+                        * El segundo usa switch ya que trata de comparar un valor contra varios valores concretos.
+
+
+Ejercicio 3:
+                           1. El código sirve para generar dinámicamente una tabla HTML de 5 filas y 2 columnas usando bucles, si cambias $row o $col, cambia automáticamente el tamaño de la tabla.
+                           2. El código sirve para pedir la edad al usuario y mostrar si es mayor o menor de edad al enviar el formulario.
+Ejercicio 4:
+1ra salida: La primera salida muestra solo “El” con espacios porque las variables aún no estaban definidas.
+2da salida: Después de incluir el archivo, las variables se cargan y la segunda salida muestra “El clavel blanco”.
+Ejercicio 5:
+Paso N° 1 Archivo contador.dat
+
+                           * Es un archivo de texto que guarda un número: la cantidad de visitas acumuladas.
+
+                           * Se crea manualmente al principio con un valor inicial (ej: 0).
+
+Paso N° 2 Archivo contador.php
+
+                              * Abre contador.dat en modo lectura y obtiene el número actual de visitas.
+
+                              * Cierra el archivo.
+
+                              * Lo abre nuevamente en modo escritura, incrementa el número en 1 y guarda el nuevo valor.
+
+                              * Cierra otra vez.
+
+                              * Finalmente muestra el total actualizado en la página con el mensaje:
+“Cantidad de visitas: X”, donde X es el número acumulado.
+
+Paso N° 3 Archivo visitas.php
+
+                                 * Es la página que se visita en el navegador.
+
+                                 * Incluye contador.php, por lo que cada vez que alguien accede, se ejecuta el contador y se muestra el total.
+Parte 2 PHP: arrays, funciones
+
+
+Ejercicio 1:
+
+
+Los dos códigos son equivalentes, generan exactamente el mismo array con las mismas claves y valores.
+
+
+Ejercicio 2:
+
+
+Las salidas de los códigos son:
+
+
+a) bar1
+
+b) 5942
+
+c) no muestra nada
+
+
+Ejercicio 3: 
+
+
+Las salidas de los códigos son:
+
+
+a) Muestra un mensaje con la hora, minutos, segundos, día, mes y año actuales.
+
+b) Muestra: 5+6=11
+
+
+Ejercicio 4:
+La función comprueba que el nombre de usuario tenga entre 3 y 20 caracteres y que solo use letras, números, guion o guion bajo. Si cumple, muestra “es válido”; en caso contrario, muestra “no es válido”.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Script de prueba:
+
+
+<?php
+function comprobar_nombre_usuario($nombre_usuario){
+    // Verificar longitud
+    if (strlen($nombre_usuario)<3 || strlen($nombre_usuario)>20){
+        echo $nombre_usuario . " no es válido<br>";
+        return false;
+    }
+    // Verificar caracteres permitidos
+    $permitidos = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-_";
+    for ($i=0; $i<strlen($nombre_usuario); $i++){
+        if (strpos($permitidos, substr($nombre_usuario,$i,1))===false){
+            echo $nombre_usuario . " no es válido<br>";
+            return false;
+        }
+    }
+    echo $nombre_usuario . " es válido<br>";
+    return true;
+}
+
+
+// Casos de prueba
+comprobar_nombre_usuario("abc");// válido
+comprobar_nombre_usuario("ab");// no válido (muy corto)
+comprobar_nombre_usuario("usuario_demo");// válido
+comprobar_nombre_usuario("usuario con espacio");// no válido (espacio)
+comprobar_nombre_usuario("muylargonombredeusuario12345");// no válido (muy largo)
+comprobar_nombre_usuario("User_123");// válido
+?>

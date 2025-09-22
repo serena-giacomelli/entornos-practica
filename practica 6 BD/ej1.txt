@@ -1,0 +1,16 @@
+Ejercicio 1: Completar 
+
+Consulta a una base de datos: Para comenzar la comunicación con un servidor de base de datos MySQL, es necesario abrir una conexión a ese servidor. Para inicializar esta conexión, PHP ofrece la función  mysqli_connect() 
+
+Todos sus parámetros son opcionales, pero hay tres de ellos que generalmente son necesarios:  servidor (hostname), usuario (username), contraseña (password). 
+
+Una vez abierta la conexión, se debe seleccionar una base de datos para su uso, mediante la función  mysqli_select_db(). Esta función debe pasar como parámetro el identificador de conexión y el nombre de la base de datos. 
+
+La función mysqli_query () se utiliza para  ejecutar consultas SQL (SELECT, INSERT, UPDATE, DELETE) y requiere como parámetros  la conexión y la consulta SQL a ejecutar. 
+
+La cláusula or die() se utiliza para  detener la ejecución del programa si ocurre un error y la función mysqli_error () se puede usar para mostrar el mensaje del último error ocurrido en la conexión. 
+
+Si la función mysqli_query() es exitosa, el conjunto resultante retornado se almacena en una variable, por ejemplo $vResult, y a continuación se puede ejecutar el siguiente código (explicarlo):
+Después de ejecutar una consulta SQL con la función mysqli_query(), si la consulta fue exitosa, el resultado se almacena en una variable (por ejemplo, $vResult) y se puede recorrer utilizando un bucle while junto con la función mysqli_fetch_array(), que obtiene cada fila del resultado como un array; dentro del bucle, normalmente se muestran los datos en una tabla HTML, imprimiendo los valores de cada columna en celdas (<td>), y al finalizar el recorrido se liberan los recursos con mysqli_free_result() y se cierra la conexión a la base de datos con mysqli_close(), permitiendo así mostrar los datos obtenidos de la base de forma ordenada y eficiente en la página web.
+
+
